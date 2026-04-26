@@ -83,8 +83,7 @@ def draw_neural_network(layer_sizes, ax):
 # --- Sidebar ---
 st.sidebar.header("Network Parameters")
 
-# 1. Dataset Selection (Optional addition)
-# dataset_type = st.sidebar.selectbox("Select Dataset", ("Moons", "Circles"))
+# 1. Dataset Selection (Optional - currently fixed to 'Moons')
 
 # 2. Network Architecture
 num_hidden_neurons = st.sidebar.slider("Number of Neurons (Hidden Layer)", min_value=1, max_value=50, value=10)
@@ -103,9 +102,7 @@ solver = st.sidebar.selectbox("Solver (Optimizer)", ("adam", "sgd", "lbfgs"))
 max_iter = st.sidebar.number_input("Maximum Iterations", min_value=10, max_value=10000, value=500)
 
 st.sidebar.markdown("---")
-# Button to update visualizations
-if st.sidebar.button("Run & Visualize Changes"):
-    st.experimental_set_query_params(neurons=num_hidden_neurons, activation=activation_function, lr=initial_learning_rate)
+st.sidebar.markdown("Amitesh Ranjan | (25212011110)")
 
 # --- Main Page Content ---
 st.title("Interactive Neural Network Visualizer")
